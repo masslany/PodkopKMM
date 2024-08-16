@@ -1,6 +1,5 @@
 package pl.masslany.auth.domain.di
 
-import org.koin.core.annotation.ComponentScan
 import org.koin.core.annotation.Factory
 import org.koin.core.annotation.Module
 import pl.masslany.auth.data.infrastructure.di.AuthDataModule
@@ -15,7 +14,6 @@ import pl.masslany.auth.domain.UpdateTokensUseCase
 import pl.masslany.auth.domain.UpdateTokensUseCaseImpl
 
 @Module(includes = [AuthDataModule::class])
-@ComponentScan
 class AuthDomainModule {
 
     @Factory
