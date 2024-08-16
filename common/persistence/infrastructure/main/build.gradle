@@ -1,0 +1,11 @@
+apply plugin: 'kotlin'
+
+
+dependencies {
+    implementation libs.datastore
+    implementation project(":common:persistence:api")
+
+    testImplementation libs.junit
+    testImplementation libs.test.junit
+    testImplementation libs.test.coroutines
+}

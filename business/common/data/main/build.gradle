@@ -1,0 +1,15 @@
+apply plugin: 'kotlin'
+
+dependencies {
+//    implementation libs.kotlinx.coroutines.android
+//    implementation libs.arrow
+//    testImplementation libs.mockk
+//    testImplementation libs.junit
+//    testImplementation libs.test.junit
+//    testImplementation libs.test.coroutines
+//
+//    implementation project(":business:common:domain:models")
+//    implementation project(":business:common:data:network:models")
+//    implementation project(":common:kotlin:coroutines:api")
+//    api project(":common:kotlin:mapper")
+}

@@ -1,0 +1,14 @@
+apply plugin: 'kotlin'
+apply plugin: 'com.google.devtools.ksp'
+
+dependencies {
+    implementation libs.koin.core
+    implementation libs.koin.annotation
+    ksp libs.koin.compiler
+
+    implementation project(":business:auth:data:api")
+    implementation project(":business:auth:data:main")
+    implementation project(":business:auth:data:network:di")
+    implementation project(":business:auth:domain:main")
+     implementation project(":common:network:infrastructure:di")
+}

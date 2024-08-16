@@ -1,0 +1,16 @@
+apply plugin: 'kotlin'
+apply plugin: 'com.google.devtools.ksp'
+
+dependencies {
+    implementation libs.koin.core
+    implementation libs.koin.annotation
+    ksp libs.koin.compiler
+    implementation libs.bundles.ktor
+    implementation libs.ktor.serialization.kotlinx.json
+
+    implementation project(":common:network:api")
+    implementation project(":common:network:infrastructure:main")
+    implementation project(":common:network:models")
+    implementation project(":common:configstorage:api")
+    implementation project(":common:configstorage:infrastructure:di")
+}

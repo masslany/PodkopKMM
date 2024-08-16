@@ -1,0 +1,10 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation libs.bundles.ktor
+    implementation libs.ktor.serialization.kotlinx.json
+
+    implementation project(":common:network:api")
+    implementation project(":common:network:models")
+    implementation project(":business:auth:data:network:models")
+}

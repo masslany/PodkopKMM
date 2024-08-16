@@ -6,4 +6,6 @@ plugins {
     alias(libs.plugins.jetbrainsCompose) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
+    id("com.google.devtools.ksp") version libs.versions.ksp apply false
+    kotlin("plugin.serialization") version libs.versions.kotlinx.serialization
 }

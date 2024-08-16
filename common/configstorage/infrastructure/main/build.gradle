@@ -1,0 +1,10 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation project(":common:configstorage:api")
+    implementation project(":common:persistence:api")
+
+    testImplementation libs.junit
+    testImplementation libs.test.junit
+    testImplementation libs.test.coroutines
+}

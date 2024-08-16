@@ -1,0 +1,8 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation project(":business:auth:data:api")
+    implementation project(":business:auth:data:network:api")
+    implementation project(":business:auth:data:network:models")
+    implementation project(":business:auth:domain:main")
+}
