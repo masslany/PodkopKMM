@@ -1,4 +1,4 @@
-rootProject.name = "PodkopKMP"
+rootProject.name = "Podkop"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {

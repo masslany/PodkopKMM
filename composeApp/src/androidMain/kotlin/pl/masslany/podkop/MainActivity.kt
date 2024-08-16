@@ -1,4 +1,4 @@
-package pl.masslany.podkopkmp
+package pl.masslany.podkop
 
 import App
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package pl.masslany.podkopkmp.di
+package pl.masslany.podkop.di
 
 import org.koin.core.annotation.Module
 import pl.masslany.auth.domain.di.AuthDomainModule
