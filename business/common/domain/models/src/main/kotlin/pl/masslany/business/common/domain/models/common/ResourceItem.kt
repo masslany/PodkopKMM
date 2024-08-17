@@ -1,31 +1,30 @@
 package pl.masslany.business.common.domain.models.common
 
-import arrow.core.Option
 import java.util.Date
 
 data class ResourceItem(
-    val actions: Option<Actions>,
+    val actions: Actions?,
     val adult: Boolean,
     val archive: Boolean,
-    val author: Option<Author>,
-    val comments: Option<Comments>,
+    val author: Author?,
+    val comments: Comments?,
     val content: String,
-    val createdAt: Option<Date>,
+    val createdAt: Date,
     val deleted: Deleted,
     val deletable: Boolean,
     val description: String,
     val editable: Boolean,
     val hot: Boolean,
     val id: Int,
-    val media: Option<Media>,
+    val media: Media,
     val name: String,
-    val publishedAt: Option<Date>,
+    val publishedAt: Date,
     val recommended: Boolean,
     val resource: Resource,
     val slug: String,
-    val source: Option<Source>,
+    val source: Source,
     val tags: List<String>,
     val title: String,
     val voted: Boolean,
-    val votes: Option<Votes>,
+    val votes: Votes,
 )

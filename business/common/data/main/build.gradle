@@ -2,7 +2,6 @@ apply plugin: 'kotlin'
 
 dependencies {
 //    implementation libs.kotlinx.coroutines.android
-//    implementation libs.arrow
 //    testImplementation libs.mockk
 //    testImplementation libs.junit
 //    testImplementation libs.test.junit

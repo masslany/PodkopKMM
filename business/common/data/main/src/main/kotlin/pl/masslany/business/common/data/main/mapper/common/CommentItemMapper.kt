@@ -1,7 +1,5 @@
 package pl.masslany.business.common.data.main.mapper.common
 
-import arrow.core.none
-import arrow.core.toOption
 import pl.masslany.business.common.data.main.mapper.ResourceMapper
 import pl.masslany.business.common.data.network.models.comments.CommentItemDto
 import pl.masslany.business.common.domain.models.common.Comment
@@ -26,7 +24,7 @@ class CommentItemMapperImpl(
                 archive = it.archive,
                 author = authorMapper.map(it.author),
                 comments = none(),
-                createdAt = it.createdAt.toOption(),
+                createdAt = it.createdAt,
                 deletable = it.deletable,
                 editable = it.editable,
                 id = it.id,

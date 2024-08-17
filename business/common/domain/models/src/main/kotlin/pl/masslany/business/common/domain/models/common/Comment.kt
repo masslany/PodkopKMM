@@ -1,6 +1,5 @@
 package pl.masslany.business.common.domain.models.common
 
-import arrow.core.Option
 import java.util.Date
 
 data class Comment(
@@ -9,7 +8,7 @@ data class Comment(
     val archive: Boolean,
     val author: Author,
     val blacklist: Boolean,
-    val comments: Option<Comments>,
+    val comments: Comments?,
     val content: String,
     val createdAt: Option<Date>,
     val deletable: Boolean,
