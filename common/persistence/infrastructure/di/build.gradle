@@ -1,0 +1,12 @@
+apply plugin: 'kotlin'
+apply plugin: 'com.google.devtools.ksp'
+
+dependencies {
+    implementation libs.koin.core
+    implementation libs.koin.annotation
+    ksp libs.koin.compiler
+    implementation libs.datastore
+
+    implementation project(":common:persistence:api")
+    implementation project(":common:persistence:infrastructure:main")
+}

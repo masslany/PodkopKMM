@@ -1,0 +1,13 @@
+apply plugin: 'kotlin'
+
+dependencies {
+    testImplementation libs.mockk
+    testImplementation libs.junit
+    testImplementation libs.test.junit
+    testImplementation libs.test.coroutines
+
+    implementation project(":business:auth:data:api")
+    implementation project(":business:auth:data:network:api")
+    implementation project(":business:auth:data:network:models")
+    implementation project(":common:configstorage:api")
+}
