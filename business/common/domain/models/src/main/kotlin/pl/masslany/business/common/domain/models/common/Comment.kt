@@ -10,7 +10,7 @@ data class Comment(
     val blacklist: Boolean,
     val comments: Comments?,
     val content: String,
-    val createdAt: Option<Date>,
+    val createdAt: Date?,
     val deletable: Boolean,
     val deleted: Deleted,
     val device: String,

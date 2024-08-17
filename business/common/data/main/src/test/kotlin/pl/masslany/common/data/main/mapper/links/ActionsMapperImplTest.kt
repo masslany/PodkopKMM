@@ -3,14 +3,13 @@ package pl.masslany.common.data.main.mapper.links
 import io.mockk.every
 import io.mockk.mockk
 import org.junit.Test
-import pl.masslany.business.common.data.main.mapper.common.ActionsMapperImpl
+import pl.masslany.business.common.data.main.mapper.common.toActions
 import pl.masslany.business.common.data.network.models.common.ActionsDto
 import pl.masslany.business.common.domain.models.common.Actions
 import kotlin.test.assertIs
 import kotlin.test.assertTrue
 
 class ActionsMapperImplTest {
-    private val sut = ActionsMapperImpl()
 
     @Test
     fun `Given ActionDto When map Then return domain model`() {
@@ -31,7 +30,7 @@ class ActionsMapperImplTest {
             }
 
         // When
-        val result = sut.map(actionsDto)
+        val result = actionsDto.toActions()
 
         // Then
         assertIs<Actions>(result)

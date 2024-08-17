@@ -2,24 +2,19 @@ package pl.masslany.business.common.data.main.mapper.common
 
 import pl.masslany.business.common.data.network.models.common.ActionsDto
 import pl.masslany.business.common.domain.models.common.Actions
-import pl.masslany.common.kotlin.mapper.Mapper
 
-interface ActionsMapper : Mapper<ActionsDto, Actions>
-
-class ActionsMapperImpl : ActionsMapper {
-    override fun map(param: ActionsDto): Actions {
-        return Actions(
-            create = param.create ?: false,
-            createFavourite = param.createFavourite ?: false,
-            delete = param.delete ?: false,
-            deleteFavourite = param.deleteFavourite ?: false,
-            finishAma = param.finishAma ?: false,
-            report = param.report ?: false,
-            startAma = param.startAma ?: false,
-            undoVote = param.undoVote ?: false,
-            update = param.update ?: false,
-            voteDown = param.voteDown ?: false,
-            voteUp = param.voteUp ?: false,
-        )
-    }
+fun ActionsDto.toActions(): Actions {
+    return Actions(
+        create = create ?: false,
+        createFavourite = createFavourite ?: false,
+        delete = delete ?: false,
+        deleteFavourite = deleteFavourite ?: false,
+        finishAma = finishAma ?: false,
+        report = report ?: false,
+        startAma = startAma ?: false,
+        undoVote = undoVote ?: false,
+        update = update ?: false,
+        voteDown = voteDown ?: false,
+        voteUp = voteUp ?: false,
+    )
 }
