@@ -2,17 +2,8 @@ package pl.masslany.common.data.main.mapper.links
 
 import io.mockk.every
 import io.mockk.mockk
-import io.mockk.verify
 import org.junit.Test
-import pl.masslany.business.common.data.main.mapper.ResourceMapper
-import pl.masslany.business.common.data.main.mapper.common.ActionsMapper
-import pl.masslany.business.common.data.main.mapper.common.AuthorMapper
-import pl.masslany.business.common.data.main.mapper.common.CommentsMapper
-import pl.masslany.business.common.data.main.mapper.common.DeletedMapper
-import pl.masslany.business.common.data.main.mapper.common.MediaMapper
-import pl.masslany.business.common.data.main.mapper.common.ResourceItemMapperImpl
-import pl.masslany.business.common.data.main.mapper.common.SourceMapper
-import pl.masslany.business.common.data.main.mapper.common.VotesMapper
+import pl.masslany.business.common.data.main.mapper.common.toResourceItem
 import pl.masslany.business.common.data.network.models.common.ActionsDto
 import pl.masslany.business.common.data.network.models.common.AuthorDto
 import pl.masslany.business.common.data.network.models.common.CommentsDto
@@ -24,26 +15,6 @@ import pl.masslany.business.common.domain.models.common.ResourceItem
 import kotlin.test.assertIs
 
 class ResourceItemMapperImplTest {
-    private val mockActionsMapper = mockk<ActionsMapper>()
-    private val mockAuthorMapper = mockk<AuthorMapper>()
-    private val mockCommentsMapper = mockk<CommentsMapper>()
-    private val mockMediaMapper = mockk<MediaMapper>()
-    private val mockSourceMapper = mockk<SourceMapper>()
-    private val mockVotesMapper = mockk<VotesMapper>()
-    private val mockResourceMapper = mockk<ResourceMapper>()
-    private val mockDeletedMapper = mockk<DeletedMapper>()
-
-    private val sut =
-        ResourceItemMapperImpl(
-            mockActionsMapper,
-            mockAuthorMapper,
-            mockCommentsMapper,
-            mockMediaMapper,
-            mockSourceMapper,
-            mockVotesMapper,
-            mockResourceMapper,
-            mockDeletedMapper,
-        )
 
     @Test
     fun `Given dataDto When map Then return domain model`() {
@@ -65,26 +36,11 @@ class ResourceItemMapperImplTest {
                 every { resource } returns "link"
                 every { deleted } returns null
             }
-        every { mockActionsMapper.map(mockActionsDto) } returns mockk()
-        every { mockAuthorMapper.map(mockAuthorDto) } returns mockk()
-        every { mockCommentsMapper.map(mockCommentsDto) } returns mockk()
-        every { mockMediaMapper.map(mockMediaDto) } returns mockk()
-        every { mockSourceMapper.map(mockSourceDto) } returns mockk()
-        every { mockVotesMapper.map(mockVotesDto) } returns mockk()
-        every { mockResourceMapper.map("link") } returns mockk()
-        every { mockDeletedMapper.map(null) } returns mockk()
 
         // When
-        val result = sut.map(listOf(dataDto))
+        val result = dataDto.toResourceItem()
 
         // Then
-        assertIs<ResourceItem>(result.first())
-        verify { mockActionsMapper.map(mockActionsDto) }
-        verify { mockAuthorMapper.map(mockAuthorDto) }
-        verify { mockCommentsMapper.map(mockCommentsDto) }
-        verify { mockMediaMapper.map(mockMediaDto) }
-        verify { mockSourceMapper.map(mockSourceDto) }
-        verify { mockVotesMapper.map(mockVotesDto) }
-        verify { mockResourceMapper.map("link") }
+        assertIs<ResourceItem>(result)
     }
 }

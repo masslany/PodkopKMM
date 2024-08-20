@@ -1,12 +1,11 @@
 package pl.masslany.common.data.main.mapper
 
 import org.junit.Test
-import pl.masslany.business.common.data.main.mapper.ResourceMapperImpl
+import pl.masslany.business.common.data.main.mapper.toResource
 import pl.masslany.business.common.domain.models.common.Resource
 import kotlin.test.assertIs
 
 class ResourceMapperImplTest {
-    private val sut = ResourceMapperImpl()
 
     @Test
     fun `Given link When map Then return Resource Link`() {
@@ -14,7 +13,7 @@ class ResourceMapperImplTest {
         val data = "link"
 
         // When
-        val result = sut.map(data)
+        val result = data.toResource()
 
         // Then
         assertIs<Resource.Link>(result)
@@ -26,7 +25,7 @@ class ResourceMapperImplTest {
         val data = "entry"
 
         // When
-        val result = sut.map(data)
+        val result = data.toResource()
 
         // Then
         assertIs<Resource.Entry>(result)
@@ -38,7 +37,7 @@ class ResourceMapperImplTest {
         val data = "entry_comment"
 
         // When
-        val result = sut.map(data)
+        val result = data.toResource()
 
         // Then
         assertIs<Resource.EntryComment>(result)
@@ -50,7 +49,7 @@ class ResourceMapperImplTest {
         val data = "link_comment"
 
         // When
-        val result = sut.map(data)
+        val result = data.toResource()
 
         // Then
         assertIs<Resource.LinkComment>(result)
@@ -62,7 +61,7 @@ class ResourceMapperImplTest {
         val data = "unknown_res"
 
         // When
-        val result = sut.map(data)
+        val result = data.toResource()
 
         // Then
         assertIs<Resource.Unknown>(result)
